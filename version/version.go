@@ -19,22 +19,22 @@ package version
 import "fmt"
 
 const (
-	VersionMajor = 0       // Major version component of the current release
-	VersionMinor = 1       // Minor version component of the current release
-	VersionPatch = 1       // Patch version component of the current release
-	VersionMeta  = "alpha" // Version metadata to append to the version string
+	Major = 0       // Major version component of the current release
+	Minor = 1       // Minor version component of the current release
+	Patch = 2       // Patch version component of the current release
+	Meta  = "alpha" // Version metadata to append to the version string
 )
 
 // Version holds the textual version string.
 var Version = func() string {
-	return fmt.Sprintf("%d.%d.%d", VersionMajor, VersionMinor, VersionPatch)
+	return fmt.Sprintf("%d.%d.%d", Major, Minor, Patch)
 }()
 
 // VersionWithMeta holds the textual version string including the metadata.
 var VersionWithMeta = func() string {
 	v := Version
-	if VersionMeta != "" {
-		v += "-" + VersionMeta
+	if Meta != "" {
+		v += "-" + Meta
 	}
 	return v
 }()
